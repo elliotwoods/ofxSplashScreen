@@ -11,6 +11,8 @@ void ofApp::setup2(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+	//currently we need to run this on the second frame
+	//because the opengl environment isn't ready yet on the first frame
 	if (ofGetFrameNum() == 1) {
 		this->setup2();
 	}
