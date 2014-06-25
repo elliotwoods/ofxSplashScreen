@@ -22,7 +22,7 @@ void ofxSplashScreen::init(ofPixels & pixels) {
 //----------
 void ofxSplashScreen::begin(float minimumDuration) {
 	this->endTime = ofGetElapsedTimef() + minimumDuration;
-	this->appWindow = dynamic_cast<ofAppGLFWWindow*>(ofGetWindowPtr())->getGLFWWindow();
+	this->appWindow = glfwGetCurrentContext();
 	
 	glfwHideWindow(this->appWindow);
 	glfwWindowHint(GLFW_DECORATED, GL_FALSE);
