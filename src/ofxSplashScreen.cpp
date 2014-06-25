@@ -27,17 +27,20 @@ void ofxSplashScreen::begin(float minimumDuration) {
 	glfwHideWindow(this->appWindow);
 	glfwWindowHint(GLFW_DECORATED, GL_FALSE);
 	this->splashScreenWindow = glfwCreateWindow(this->image.getWidth(), this->image.getHeight(), "ofxSplashScreen", NULL, this->appWindow);
+	glfwSetWindowPos(this->splashScreenWindow, (ofGetScreenWidth() - this->image.getWidth()) / 2.0f, (ofGetScreenHeight() - this->image.getHeight()) / 2.0f);
+	glfwWindowHint(GLFW_DECORATED, GL_TRUE);
 	glfwMakeContextCurrent(this->splashScreenWindow);
 	
+	//set the drawing matrices to normalised coordinates
 	ofSetMatrixMode(OF_MATRIX_PROJECTION);
 	ofLoadIdentityMatrix();
 	ofSetMatrixMode(OF_MATRIX_MODELVIEW);
 	ofLoadIdentityMatrix();
 	
+	//draw the images
 	ofClear(0,0,0);
 	this->image.update();
 	this->image.draw(-1,-1,2,2);
-	
 	glfwSwapBuffers(this->splashScreenWindow);
 	glFlush();
 	
