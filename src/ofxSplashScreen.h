@@ -8,6 +8,8 @@ public:
 	ofxSplashScreen();
 	void init(string filename);
 	void init(ofPixels &);
+	void init(ofImage &);
+
 	void begin(float minimumDuration = 3.0f);
 	void end();
 protected:

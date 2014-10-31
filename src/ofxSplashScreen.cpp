@@ -20,7 +20,16 @@ void ofxSplashScreen::init(ofPixels & pixels) {
 }
 
 //----------
+void ofxSplashScreen::init(ofImage & image) {
+	this->image = image;
+}
+
+//----------
 void ofxSplashScreen::begin(float minimumDuration) {
+	if (!this->image.isAllocated()) {
+		ofLogError("ofxSplashScreen") << "Cannot show splash screen since no image has been loaded";
+		return;
+	}
 	this->endTime = ofGetElapsedTimef() + minimumDuration;
 	this->appWindow = glfwGetCurrentContext();
 	
