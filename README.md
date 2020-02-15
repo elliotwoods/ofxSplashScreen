@@ -3,6 +3,9 @@ ofxSplashScreen
 
 Pop up a splash screen graphic during your heavy setup function
 
+**NOTE : This hasn't worked for a while. Happy to take any pull requests which can make it up to date.**
+
+
 Notes
 -----
 
