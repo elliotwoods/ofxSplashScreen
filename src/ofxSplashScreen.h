@@ -6,7 +6,7 @@
 class ofxSplashScreen {
 public:
 	ofxSplashScreen();
-	void init(string filename);
+	void init(const std::string & imageFile);
 	void init(ofPixels &);
 	void init(ofImage &);
 

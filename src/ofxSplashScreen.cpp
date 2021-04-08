@@ -9,7 +9,7 @@ ofxSplashScreen::ofxSplashScreen() {
 }
 
 //----------
-void ofxSplashScreen::init(string filename) {
+void ofxSplashScreen::init(const std::string & filename) {
 	this->image.loadImage(filename);
 }
 
