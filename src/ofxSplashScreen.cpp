@@ -1,6 +1,7 @@
 #include "ofxSplashScreen.h"
 
 #include "ofMain.h"
+#include <GLFW/glfw3.h>
 
 //----------
 ofxSplashScreen::ofxSplashScreen() {
